@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace NorthernMIQuizlet
 {
@@ -62,15 +63,25 @@ namespace NorthernMIQuizlet
             do
             {
                 DisplayScreenHeader("Main Screen");
-                Console.WriteLine("\ta) ");
-                Console.WriteLine("\tq) Quit");
+                Console.WriteLine("\ta) Flash Quiz");
+                Console.WriteLine("\tb) Score Board");
+                Console.WriteLine("\tc) Quit");
                 Console.Write("\t\tEnter Choice:");
                 menuChoice = Console.ReadLine().ToLower();
 
                 switch (menuChoice)
                 {
                     case "a":
-                     
+                        DisplayFlashQuiz();
+                        break;
+
+                    case "b":
+                        DisplayScores();
+                        break;
+                    case "c":
+                        DisplayClosingScreen();
+                        break;
+
                     default:
                         Console.WriteLine();
                         Console.WriteLine("\tPlease enter a letter for the menu choice.");
@@ -80,6 +91,176 @@ namespace NorthernMIQuizlet
 
             } while (!quitApplication);
         }
+
+       
+
+        //
+        // This is where the bulk of the program is going to take place more or less
+        //
+
+        static void DisplayFlashQuiz()
+        {
+            string userRespsonse;
+            bool validResponse;
+
+            
+            
+            
+            
+            
+        }
+
+
+        #region Qusstions
+        //
+        // summary
+        // this is where all of the question and hint static void will be so i can just will into the quiz area
+        //
+
+            static void DisplayQuestionOne()
+        {
+            //
+            // Charlevoix castell
+            // Question 1 what city in northern michigan has its own castle
+            //
+            string userResponse;
+            double Score;
+
+            DisplayScreenHeader("Question One");
+            Console.WriteLine();
+            Console.WriteLine("What City in Northern Michigan has its own Castle");
+            Console.WriteLine();
+            userResponse = Console.ReadLine();
+           
+            if (userResponse == "Charlevoix")
+            {
+                Console.WriteLine("Corect");
+
+                File. 
+            }
+            else
+            {
+                Console.WriteLine("Would you like a hint [ yes or no] ");
+                Console.ReadLine();
+                userResponse = Console.ReadLine();
+
+            }
+
+        }
+          
+
+            static  void DisplayQuestionTwo()
+        {
+            //
+            // Question 2
+            // What island used to have its own king 
+            //
+
+
+        }
+
+            static void DisplayQuestionThree()
+        {
+            //
+            // Question 3 
+            // There is an 11 foot crucific that is located in Lake Michigan never witch City?
+            // A = Petoskey
+            //
+
+        }
+
+            static void DisplayQuestionFour()
+        {
+            //
+            // Question 4 
+            // What can you find on the beachs on the shore line of lake Michihgan that you cant find any were else in the world?
+            // A = Petoskey stones
+
+
+
+        }
+
+            static void DisplayQuestionFive()
+        {
+            //
+            // Questin 5 
+            // What is the name of the Microbrewery that is located in Bellaire Michigan?
+            // a = Shorts Brewing Company
+            //
+
+
+
+        }
+
+            static void DisplayQuestionSix()
+        {
+            //
+            // Question 6
+            // Which City is more expensive to live in? A - Petoskey B - Charleviox C - Harbor Springs D - Boyne City E - Mackinaw Island
+            // a = C - Harbor Springs
+            //
+
+        }
+
+             static void DisplayQuestionSeven()
+        {
+            //
+            // Question 7
+            // what is traverse City biggest export?
+            // a = tart cherries
+            //
+
+
+
+
+        }
+
+            static void DisplayQuestionEight()
+        {
+            //
+            // Question 8
+            // What is the deepest inland lake in Michigan?
+            // a = Torch Lake
+            //
+
+
+
+
+
+        }
+
+            static void DisplayQuestionNine()
+        {
+            //
+            // Question 9
+            // what makes the lakes and great lakes so clear in Michigan?
+            // a = Zebra Mussels
+            //
+
+
+
+
+
+        }
+
+            static void DisplayQuestionTen()
+        {
+            //
+            // Question 10 
+            // 
+
+
+
+
+
+
+        }
+
+
+
+
+
+        #endregion
 
         #region USER INTERFACE
 
@@ -148,6 +329,32 @@ namespace NorthernMIQuizlet
             Console.WriteLine();
         }
         #endregion
+
+
+
+        #region Data scores IO
+
+        //
+        // this is going to be the score section with in the data.dataSet folder with is a I.O file
+        //
+
+        static void DisplayScores()
+        {
+
+
+
+
+
+
+
+        }
+
+
+        #endregion
+
+
+
+
 
     }
 
