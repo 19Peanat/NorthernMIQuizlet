@@ -117,7 +117,7 @@ namespace NorthernMIQuizlet
         // this is where all of the question and hint static void will be so i can just will into the quiz area
         //
 
-            static void DisplayQuestionOne()
+        static void DisplayQuestionOne()
         {
             //
             // Charlevoix castell
@@ -131,21 +131,74 @@ namespace NorthernMIQuizlet
             Console.WriteLine("What City in Northern Michigan has its own Castle");
             Console.WriteLine();
             userResponse = Console.ReadLine();
-           
+
             if (userResponse == "Charlevoix")
             {
                 Console.WriteLine("Corect");
+                //
+                // add to file IO datset
+                //
 
-                File. 
+
+
             }
             else
             {
+                Console.WriteLine("Incorect");
+                Console.WriteLine();
                 Console.WriteLine("Would you like a hint [ yes or no] ");
                 Console.ReadLine();
                 userResponse = Console.ReadLine();
+                if (userResponse == "yes")
+                {
+                    Console.WriteLine("Also has a lake named after it");
+                    Console.ReadLine();
+                    userResponse = Console.ReadLine();
+                    if (userResponse == "Charlevoix")
+                    {
+                        Console.WriteLine("corect");
+                        //
+                        // add to file dataset
+                        //
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("sorry that is incorect ");
+                        Console.WriteLine();
+                        Console.WriteLine("press any key to go to the next question");
+                        Console.ReadKey();
+                        DisplayQuestionTwo();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Secound try");
+                    Console.ReadLine();
+                    userResponse = Console.ReadLine();
+
+                    if (userResponse == "Charlevoix")
+                    {
+                        Console.WriteLine("corect");
+                        //
+                        // add to file dataset
+                        //
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("sorry that is incorect ");
+                        Console.WriteLine();
+                        Console.WriteLine("press any key to go to the next question");
+                        Console.ReadKey();
+                        DisplayQuestionTwo();
+
+                    }
+                }
 
             }
-
         }
           
 
@@ -155,9 +208,88 @@ namespace NorthernMIQuizlet
             // Question 2
             // What island used to have its own king 
             //
+            string userResponse;
+            double Score;
+           
+            DisplayScreenHeader("Question Two");
+            Console.WriteLine("What Island used to have  it's own king?");
+            Console.WriteLine("_________________________________________________________________________");
+            Console.WriteLine("Fox island |  Beaver island  |  Mackinac island  |  Fishermans island  |");
+            Console.WriteLine("_________________________________________________________________________");
+            Console.ReadLine();
+            userResponse = Console.ReadLine();
+            if (userResponse == "Beaver island")
+            {
+                Console.WriteLine("Corect");
+                //
+                // add to file IO datset
+                //
 
+
+
+            }
+            else
+            {
+                Console.WriteLine("Incorect");
+                Console.WriteLine();
+                Console.WriteLine("Would you like a hint [ yes or no] ");
+                Console.ReadLine();
+                userResponse = Console.ReadLine();
+                if (userResponse == "yes")
+                {
+                    Console.WriteLine("The people and animals that live on this island love trees");
+                    Console.ReadLine();
+                    userResponse = Console.ReadLine();
+                    if (userResponse == "Beaver island")
+                    {
+                        Console.WriteLine("corect");
+                        //
+                        // add to file dataset
+                        //
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("sorry that is incorect ");
+                        Console.WriteLine();
+                        Console.WriteLine("press any key to go to the next question");
+                        Console.ReadKey();
+                        DisplayQuestionThree();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Secound try");
+                    Console.ReadLine();
+                    userResponse = Console.ReadLine();
+
+                    if (userResponse == "Beaver island")
+                    {
+                        Console.WriteLine("corect");
+                        //
+                        // add to file dataset
+                        //
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("sorry that is incorect ");
+                        Console.WriteLine();
+                        Console.WriteLine("press any key to go to the next question");
+                        Console.ReadKey();
+                        DisplayQuestionThree();
+
+                    }
+                }
+            }
 
         }
+
+
+
+
 
             static void DisplayQuestionThree()
         {
@@ -166,6 +298,85 @@ namespace NorthernMIQuizlet
             // There is an 11 foot crucific that is located in Lake Michigan never witch City?
             // A = Petoskey
             //
+
+            string userResponse;
+            double Score;
+
+            DisplayScreenHeader("Question Three");
+            Console.WriteLine("There is an 11 foot crucific that is located in Lake Michigan never witch City?");
+            Console.WriteLine("__________________________________________________________________________________");
+            Console.WriteLine("Harbor Springs |  North Port  |  Mackinac island  |  Petoskey  |");
+            Console.WriteLine("__________________________________________________________________________________");
+            Console.ReadLine();
+            userResponse = Console.ReadLine();
+            if (userResponse == "Petoskey")
+            {
+                Console.WriteLine("Corect");
+                //
+                // add to file IO datset
+                //
+
+
+
+            }
+            else
+            {
+                Console.WriteLine("Incorect");
+                Console.WriteLine();
+                Console.WriteLine("Would you like a hint [ yes or no] ");
+                Console.ReadLine();
+                userResponse = Console.ReadLine();
+                if (userResponse == "yes")
+                {
+                    Console.WriteLine("It's only a stone's throw away from shore");
+                    Console.ReadLine();
+                    userResponse = Console.ReadLine();
+                    if (userResponse == "Petoskey")
+                    {
+                        Console.WriteLine("corect");
+                        //
+                        // add to file dataset
+                        //
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("sorry that is incorect ");
+                        Console.WriteLine();
+                        Console.WriteLine("press any key to go to the next question");
+                        Console.ReadKey();
+                        DisplayQuestionFour();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Secound try");
+                    Console.ReadLine();
+                    userResponse = Console.ReadLine();
+
+                    if (userResponse == "Petoskey")
+                    {
+                        Console.WriteLine("corect");
+                        //
+                        // add to file dataset
+                        //
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("sorry that is incorect ");
+                        Console.WriteLine();
+                        Console.WriteLine("press any key to go to the next question");
+                        Console.ReadKey();
+                        DisplayQuestionFour();
+
+                    }
+                }
+            }
+
+
 
         }
 
@@ -176,11 +387,88 @@ namespace NorthernMIQuizlet
             // What can you find on the beachs on the shore line of lake Michihgan that you cant find any were else in the world?
             // A = Petoskey stones
 
+            string userResponse;
+            double Score;
+
+            DisplayScreenHeader("Question Four");
+            Console.WriteLine("What can you find on the beachs on the shore line of lake Michihgan that you cant find any were else in the world?");
+            Console.WriteLine("____________________________________________________________________________________________________________________");
+            Console.WriteLine("Harbor Springs |  North Port  |  Mackinac island  |  Petoskey  |");
+            Console.WriteLine("____________________________________________________________________________________________________________________");
+            Console.ReadLine();
+            userResponse = Console.ReadLine();
+            if (userResponse == "Petoskey")
+            {
+                Console.WriteLine("Corect");
+                //
+                // add to file IO datset
+                //
+
+
+
+            }
+            else
+            {
+                Console.WriteLine("Incorect");
+                Console.WriteLine();
+                Console.WriteLine("Would you like a hint [ yes or no] ");
+                Console.ReadLine();
+                userResponse = Console.ReadLine();
+                if (userResponse == "yes")
+                {
+                    Console.WriteLine("It's only a stone's throw away from shore");
+                    Console.ReadLine();
+                    userResponse = Console.ReadLine();
+                    if (userResponse == "Petoskey")
+                    {
+                        Console.WriteLine("corect");
+                        //
+                        // add to file dataset
+                        //
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("sorry that is incorect ");
+                        Console.WriteLine();
+                        Console.WriteLine("press any key to go to the next question");
+                        Console.ReadKey();
+                        DisplayQuestionFive();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Secound try");
+                    Console.ReadLine();
+                    userResponse = Console.ReadLine();
+
+                    if (userResponse == "")
+                    {
+                        Console.WriteLine("corect");
+                        //
+                        // add to file dataset
+                        //
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("sorry that is incorect ");
+                        Console.WriteLine();
+                        Console.WriteLine("press any key to go to the next question");
+                        Console.ReadKey();
+                        DisplayQuestionFive();
+
+                    }
+                }
+            }
+
 
 
         }
 
-            static void DisplayQuestionFive()
+        static void DisplayQuestionFive()
         {
             //
             // Questin 5 
