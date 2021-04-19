@@ -60,12 +60,12 @@ namespace NorthernMIQuizlet
             string menuChoice;
 
 
-           
+
             do
             {
                 DisplayScreenHeader("Main Screen");
                 Console.WriteLine("\ta) Flash Quiz");
-                Console.WriteLine("\tb) Score Board");
+                Console.WriteLine("\tb) Discustion Board");
                 Console.WriteLine("\td) Quit");
                 Console.Write("\t\tEnter Choice:");
                 menuChoice = Console.ReadLine().ToLower();
@@ -79,9 +79,9 @@ namespace NorthernMIQuizlet
                     case "b":
                         DisplayFileIO();
                         break;
-                   
-                        
-                        
+
+
+
                     case "d":
                         DisplayClosingScreen();
                         break;
@@ -100,7 +100,7 @@ namespace NorthernMIQuizlet
         {
             string userName;
             string userresponse;
-            
+
             Console.WriteLine("Please Enter A UserName");
             userName = Console.ReadLine();
             Console.WriteLine("\tYou entered the following information and it has be saved.");
@@ -109,20 +109,24 @@ namespace NorthernMIQuizlet
             userresponse = Console.ReadLine();
             Console.WriteLine("\tYou entered the following information and it has be saved.");
             Console.WriteLine($"\tUser name: {userresponse}");
-
-
-        }
-
-        static void WriteScoreInfo(string userName, string userresponse)
-        {
-string dataPath = @"Data/scoresHigh.txt";
+            string dataPath = @"data\QA.txt";
             string Information;
-            Information = userName + "," + userresponse;
+            string QA;
+            string[] Infolines;
+            QA = userName + ',' + userresponse;
+            Infolines = new string[10];
+            Infolines[0] = $"{QA}";
+           
+             File.AppendAllText(dataPath, "\n" + QA);
 
-            File.AppendAllText(dataPath, Information);
+            Console.WriteLine();
+            DisplayContinuePrompt();
 
+           
         }
 
+
+       
         //
         // This is where the bulk of the program is going to take place more or less
         //
@@ -168,7 +172,7 @@ string dataPath = @"Data/scoresHigh.txt";
         // this is where all of the question and hint static void will be so i can just will into the quiz area
         //
 
-        static double DisplayQuestionOne()
+        static void DisplayQuestionOne()
         {
             //
             // Charlevoix castell
@@ -260,11 +264,11 @@ string dataPath = @"Data/scoresHigh.txt";
 
             }
 
-            return Score1;
+            
         }
           
 
-            static double DisplayQuestionTwo()
+            static void DisplayQuestionTwo()
         {
             //
             // Question 2
@@ -356,10 +360,10 @@ string dataPath = @"Data/scoresHigh.txt";
                     }
                 }
             }
-            return Score2; 
+            
         }
 
-            static double DisplayQuestionThree()
+            static void DisplayQuestionThree()
         {
             //
             // Question 3 
@@ -450,11 +454,11 @@ string dataPath = @"Data/scoresHigh.txt";
                 }
             }
 
-            return Score3;
+           
 
         }
 
-            static double DisplayQuestionFour()
+            static void DisplayQuestionFour()
         {
             //
             // Question 4 
@@ -545,10 +549,10 @@ string dataPath = @"Data/scoresHigh.txt";
             }
 
 
-            return Score4;
+            
         }
 
-             static double DisplayQuestionFive()
+             static void DisplayQuestionFive()
         {
             //
             // Questin 5 
@@ -638,11 +642,11 @@ string dataPath = @"Data/scoresHigh.txt";
                 }
             }
             
-            return Score5;
+           
 
         }
 
-       static double DisplayQuestionSix()
+       static void DisplayQuestionSix()
         {
             //
             // Question 6
@@ -735,11 +739,11 @@ string dataPath = @"Data/scoresHigh.txt";
                 }
             }
 
-            return Score6;
+            
 
         }
 
-        static double DisplayQuestionSeven()
+        static void DisplayQuestionSeven()
         {
             //
             // Question 7
@@ -830,11 +834,11 @@ string dataPath = @"Data/scoresHigh.txt";
                 }
             }
 
-            return Score7;
+            
 
         }
 
-        static double DisplayQuestionEight()
+        static void DisplayQuestionEight()
         {
             //
             // Question 8
@@ -928,11 +932,11 @@ string dataPath = @"Data/scoresHigh.txt";
                 }
             }
 
-            return Score8;
+           
 
         }
 
-        static double DisplayQuestionNine()
+        static void DisplayQuestionNine()
         {
             //
             // Question 9
@@ -1024,7 +1028,7 @@ string dataPath = @"Data/scoresHigh.txt";
             }
 
 
-            return Score9;
+            
 
         }
 
@@ -1035,7 +1039,7 @@ string dataPath = @"Data/scoresHigh.txt";
 
 
 
-        static double DisplayQuestionTen()
+        static void DisplayQuestionTen()
         {
             //
             // Question 10 
@@ -1126,7 +1130,7 @@ string dataPath = @"Data/scoresHigh.txt";
                 }
             }
 
-            return Score10;
+            
             
         }
 
