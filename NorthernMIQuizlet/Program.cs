@@ -59,6 +59,7 @@ namespace NorthernMIQuizlet
             bool quitApplication = false;
             string menuChoice;
 
+
            
             do
             {
@@ -76,7 +77,7 @@ namespace NorthernMIQuizlet
                         break;
 
                     case "b":
-                        DisplayScores();
+                        HighScoreList();
                         break;
                     case "c":
                         DisplayClosingScreen();
@@ -102,14 +103,37 @@ namespace NorthernMIQuizlet
         {
 
 
-            DisplayQuestionOne(); 
+            DisplayQuestionOne();
+
+            DisplayQuestionTwo();
+
+            DisplayQuestionThree();
+
+            DisplayQuestionFour();
+
+            DisplayQuestionFive();
+
+            DisplayQuestionSix();
+
+
+            DisplayQuestionSeven();
+
+            DisplayQuestionEight();
+           
+            DisplayQuestionNine();
+            
+            DisplayQuestionTen();
+            DisplayClosingScreen();
+            
+
+
             
               
             
         }
 
 
-        #region Qusstions
+       
         //
         // summary
         // this is where all of the question and hint static void will be so i can just will into the quiz area
@@ -122,21 +146,26 @@ namespace NorthernMIQuizlet
             // Question 1 what city in northern michigan has its own castle
             //
             string userResponse;
-            double Score;
+            double Score1;
+            
+            const double SCOREONE = 1000;
+            const double SCOREONHINT = 500;
+            const double SCOREONESECOUNDTRY = 750;
+           
+            
 
             DisplayScreenHeader("Question One");
             Console.WriteLine();
             Console.WriteLine("What City in Northern Michigan has its own Castle");
-            Console.WriteLine();
+           
             userResponse = Console.ReadLine();
-
             if (userResponse == "Charlevoix")
             {
                 Console.WriteLine("Corect");
-                //
-                // add to file IO datset
-                //
 
+                Score1 = SCOREONE;
+                Console.WriteLine($"Very good you have recived {Score1} points to your total keep going");
+                DisplayContinuePrompt();
 
 
             }
@@ -145,20 +174,23 @@ namespace NorthernMIQuizlet
                 Console.WriteLine("Incorect");
                 Console.WriteLine();
                 Console.WriteLine("Would you like a hint [ yes or no] ");
-                Console.ReadLine();
-                userResponse = Console.ReadLine();
-                if (userResponse == "yes")
+                
+                
+               
+                if (Console.ReadLine() == "yes")
                 {
+                    Console.Clear();
                     Console.WriteLine("Also has a lake named after it");
-                    Console.ReadLine();
-                    userResponse = Console.ReadLine();
-                    if (userResponse == "Charlevoix")
+                   
+                    if (Console.ReadLine() == "Charlevoix")
                     {
                         Console.WriteLine("corect");
                         //
                         // add to file dataset
                         //
-
+                        Score1 = SCOREONHINT;
+                        Console.WriteLine($"Very good you have recived {Score1} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -166,22 +198,22 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionTwo();
+                        
                     }
                 }
                 else
                 {
                     Console.WriteLine("Secound try");
-                    Console.ReadLine();
-                    userResponse = Console.ReadLine();
-
-                    if (userResponse == "Charlevoix")
+                   
+                    if (Console.ReadLine() == "Charlevoix")
                     {
                         Console.WriteLine("corect");
                         //
                         // add to file dataset
                         //
-
+                        Score1 = SCOREONESECOUNDTRY;
+                        Console.WriteLine($"Very good you have recived {Score1} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -189,12 +221,13 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionTwo();
+                       
 
                     }
                 }
 
             }
+            
         }
           
 
@@ -205,14 +238,17 @@ namespace NorthernMIQuizlet
             // What island used to have its own king 
             //
             string userResponse;
-            double Score;
-           
+            double Score2;
+            const double SCOREONE = 1000;
+            const double SCOREONHINT = 500;
+            const double SCOREONESECOUNDTRY = 750;
+
             DisplayScreenHeader("Question Two");
             Console.WriteLine("What Island used to have  it's own king?");
             Console.WriteLine("_________________________________________________________________________");
             Console.WriteLine("Fox island |  Beaver island  |  Mackinac island  |  Fishermans island  |");
             Console.WriteLine("_________________________________________________________________________");
-            Console.ReadLine();
+            
             userResponse = Console.ReadLine();
             if (userResponse == "Beaver island")
             {
@@ -220,8 +256,9 @@ namespace NorthernMIQuizlet
                 //
                 // add to file IO datset
                 //
-
-
+                Score2 = SCOREONE;
+                Console.WriteLine($"Very good you have recived {Score2} points to your total keep going");
+                DisplayContinuePrompt();
 
             }
             else
@@ -229,12 +266,12 @@ namespace NorthernMIQuizlet
                 Console.WriteLine("Incorect");
                 Console.WriteLine();
                 Console.WriteLine("Would you like a hint [ yes or no] ");
-                Console.ReadLine();
+                
                 userResponse = Console.ReadLine();
                 if (userResponse == "yes")
                 {
                     Console.WriteLine("The people and animals that live on this island love trees");
-                    Console.ReadLine();
+                    
                     userResponse = Console.ReadLine();
                     if (userResponse == "Beaver island")
                     {
@@ -242,7 +279,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score2 = SCOREONHINT;
+                        Console.WriteLine($"Very good you have recived {Score2} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -250,13 +289,13 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionThree();
+                        
                     }
                 }
                 else
                 {
                     Console.WriteLine("Secound try");
-                    Console.ReadLine();
+                    
                     userResponse = Console.ReadLine();
 
                     if (userResponse == "Beaver island")
@@ -265,7 +304,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score2 = SCOREONESECOUNDTRY;
+                        Console.WriteLine($"Very good you have recived {Score2} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -273,7 +314,7 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionThree();
+                        
 
                     }
                 }
@@ -290,14 +331,17 @@ namespace NorthernMIQuizlet
             //
 
             string userResponse;
-            double Score;
+            double Score3;
+            const double SCOREONE = 1000;
+            const double SCOREONHINT = 500;
+            const double SCOREONESECOUNDTRY = 750;
 
             DisplayScreenHeader("Question Three");
             Console.WriteLine("There is an 11 foot crucific that is located in Lake Michigan never witch City?");
             Console.WriteLine("__________________________________________________________________________________");
             Console.WriteLine("Harbor Springs |  North Port  |  Mackinac island  |  Petoskey  |");
             Console.WriteLine("__________________________________________________________________________________");
-            Console.ReadLine();
+           
             userResponse = Console.ReadLine();
             if (userResponse == "Petoskey")
             {
@@ -305,8 +349,9 @@ namespace NorthernMIQuizlet
                 //
                 // add to file IO datset
                 //
-
-
+                Score3 = SCOREONE;
+                Console.WriteLine($"Very good you have recived {Score3} points to your total keep going");
+                DisplayContinuePrompt();
 
             }
             else
@@ -314,12 +359,12 @@ namespace NorthernMIQuizlet
                 Console.WriteLine("Incorect");
                 Console.WriteLine();
                 Console.WriteLine("Would you like a hint [ yes or no] ");
-                Console.ReadLine();
+               
                 userResponse = Console.ReadLine();
                 if (userResponse == "yes")
                 {
                     Console.WriteLine("It's only a stone's throw away from shore");
-                    Console.ReadLine();
+                    
                     userResponse = Console.ReadLine();
                     if (userResponse == "Petoskey")
                     {
@@ -327,7 +372,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score3 = SCOREONHINT;
+                        Console.WriteLine($"Very good you have recived {Score3} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -335,13 +382,13 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionFour();
+                       
                     }
                 }
                 else
                 {
                     Console.WriteLine("Secound try");
-                    Console.ReadLine();
+                   
                     userResponse = Console.ReadLine();
 
                     if (userResponse == "Petoskey")
@@ -350,7 +397,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score3 = SCOREONESECOUNDTRY;
+                        Console.WriteLine($"Very good you have recived {Score3} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -358,7 +407,7 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionFour();
+                      
 
                     }
                 }
@@ -376,13 +425,16 @@ namespace NorthernMIQuizlet
             // A = Petoskey stones
 
             string userResponse;
-            double Score;
+            const double SCOREONE = 1000;
+            const double SCOREONHINT = 500;
+            const double SCOREONESECOUNDTRY = 750;
+            double Score4;
 
             DisplayScreenHeader("Question Four");
             Console.WriteLine();
             Console.WriteLine("What can you find on the beachs on the shore line of lake Michihgan that you cant find any were else in the world?");
             
-            Console.ReadLine();
+           
             userResponse = Console.ReadLine();
             if (userResponse == "Petoskey stone" || userResponse == "Petoskey stones")
             {
@@ -390,7 +442,9 @@ namespace NorthernMIQuizlet
                 //
                 // add to file IO datset
                 //
-
+                Score4 = SCOREONE;
+                Console.WriteLine($"Very good you have recived {Score4} points to your total keep going");
+                DisplayContinuePrompt();
 
 
             }
@@ -399,12 +453,12 @@ namespace NorthernMIQuizlet
                 Console.WriteLine("Incorect");
                 Console.WriteLine();
                 Console.WriteLine("Would you like a hint [ yes or no] ");
-                Console.ReadLine();
+               
                 userResponse = Console.ReadLine();
                 if (userResponse == "yes")
                 {
                     Console.WriteLine("You might think that it is just a fossil");
-                    Console.ReadLine();
+                   
                     userResponse = Console.ReadLine();
                     if (userResponse == "Petoskey stone" || userResponse == "Petoskey stones")
                     {
@@ -412,7 +466,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score4 = SCOREONHINT;
+                        Console.WriteLine($"Very good you have recived {Score4} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -426,16 +482,18 @@ namespace NorthernMIQuizlet
                 else
                 {
                     Console.WriteLine("Secound try");
-                    Console.ReadLine();
+                   
                     userResponse = Console.ReadLine();
 
-                    if (userResponse == "")
+                    if (userResponse == "Petoskey stone" || userResponse == "Petoskey stones")
                     {
                         Console.WriteLine("corect");
                         //
                         // add to file dataset
                         //
-
+                        Score4 = SCOREONESECOUNDTRY;
+                        Console.WriteLine($"Very good you have recived {Score4} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -443,7 +501,7 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionFive();
+                        
 
                     }
                 }
@@ -462,13 +520,15 @@ namespace NorthernMIQuizlet
             //
 
             string userResponse;
-            double Score;
+            double Score5;
+            const double SCOREONE = 1000;
+            const double SCOREONHINT = 500;
+            const double SCOREONESECOUNDTRY = 750;
 
             DisplayScreenHeader("Question Five");
             Console.WriteLine();
             Console.WriteLine("What is the name of the Microbrewery that is located in Bellaire Michigan?");
 
-            Console.ReadLine();
             userResponse = Console.ReadLine();
             if (userResponse == "Shorts Brewing Company" || userResponse == "Shorts")
             {
@@ -476,7 +536,9 @@ namespace NorthernMIQuizlet
                 //
                 // add to file IO datset
                 //
-
+                Score5 = SCOREONE;
+                Console.WriteLine($"Very good you have recived {Score5} points to your total keep going");
+                DisplayContinuePrompt();
 
 
             }
@@ -485,12 +547,12 @@ namespace NorthernMIQuizlet
                 Console.WriteLine("Incorect");
                 Console.WriteLine();
                 Console.WriteLine("Would you like a hint [ yes or no] ");
-                Console.ReadLine();
+               
                 userResponse = Console.ReadLine();
                 if (userResponse == "yes")
                 {
                     Console.WriteLine("Short people love this place");
-                    Console.ReadLine();
+                    
                     userResponse = Console.ReadLine();
                     if (userResponse == "Shorts Brewing Company" || userResponse == "Shorts")
                     {
@@ -498,7 +560,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score5 = SCOREONHINT;
+                        Console.WriteLine($"Very good you have recived {Score5} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -506,13 +570,13 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionSix();
+                       
                     }
                 }
                 else
                 {
                     Console.WriteLine("Secound try");
-                    Console.ReadLine();
+                  
                     userResponse = Console.ReadLine();
 
                     if (userResponse == "Shorts Brewing Company" || userResponse == "Shorts")
@@ -521,7 +585,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score5 = SCOREONESECOUNDTRY;
+                        Console.WriteLine($"Very good you have recived {Score5} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -529,7 +595,7 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionSix();
+                        
 
                     }
                 }
@@ -548,7 +614,10 @@ namespace NorthernMIQuizlet
             //
 
             string userResponse;
-            double Score;
+            double Score6;
+            const double SCOREONE = 1000;
+            const double SCOREONHINT = 500;
+            const double SCOREONESECOUNDTRY = 750;
 
             DisplayScreenHeader("Question Six");
             Console.WriteLine("Which City is more expensive to live in?");
@@ -556,15 +625,17 @@ namespace NorthernMIQuizlet
             Console.WriteLine("A - Petoskey |  B - Charleviox  |  C - Harbor Springs  |  D - Boyne City  |  E - Mackinaw Island  |");
             Console.WriteLine("______________________________________________________________________________________________________");
             Console.WriteLine("PLeas enter a letter for your answer");
-            Console.ReadLine();
+           
             userResponse = Console.ReadLine();
-            if (userResponse ==  "A" || userResponse == "a" || userResponse == "Petoskey")
+            if (userResponse ==  "C" || userResponse == "c" || userResponse == "Harbor Springs")
             {
                 Console.WriteLine("Corect");
                 //
                 // add to file IO datset
                 //
-
+                Score6 = SCOREONE;
+                Console.WriteLine($"Very good you have recived {Score6} points to your total keep going");
+                DisplayContinuePrompt();
 
 
             }
@@ -573,20 +644,22 @@ namespace NorthernMIQuizlet
                 Console.WriteLine("Incorect");
                 Console.WriteLine();
                 Console.WriteLine("Would you like a hint [ yes or no] ");
-                Console.ReadLine();
+               
                 userResponse = Console.ReadLine();
                 if (userResponse == "yes")
                 {
                     Console.WriteLine("It is located in Little Travers Bay");
-                    Console.ReadLine();
+                   
                     userResponse = Console.ReadLine();
-                    if (userResponse == "A" || userResponse == "a" || userResponse == "Petoskey")
+                    if (userResponse == "C" || userResponse == "c" || userResponse == "Harbor Springs")
                     {
                         Console.WriteLine("corect");
                         //
                         // add to file dataset
                         //
-
+                        Score6 = SCOREONHINT;
+                        Console.WriteLine($"Very good you have recived {Score6} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -594,22 +667,24 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionSeven();
+                        
                     }
                 }
                 else
                 {
                     Console.WriteLine("Secound try");
-                    Console.ReadLine();
+                   
                     userResponse = Console.ReadLine();
 
-                    if (userResponse == "A" || userResponse == "a" || userResponse == "Petoskey")
+                    if (userResponse == "C" || userResponse == "c" || userResponse == "Harbor Springs")
                     {
                         Console.WriteLine("corect");
                         //
                         // add to file dataset
                         //
-
+                        Score6 = SCOREONESECOUNDTRY;
+                        Console.WriteLine($"Very good you have recived {Score6} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -617,7 +692,7 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionSeven();
+                        
 
                     }
                 }
@@ -636,13 +711,16 @@ namespace NorthernMIQuizlet
             //
 
             string userResponse;
-            double Score;
+            double Score7;
+            const double SCOREONE = 1000;
+            const double SCOREONHINT = 500;
+            const double SCOREONESECOUNDTRY = 750;
 
             DisplayScreenHeader("Question Seven");
             Console.WriteLine("What is Traverse City's biggest export?");
             Console.WriteLine();
              Console.WriteLine("PLeas enter a letter for your answer");
-            Console.ReadLine();
+           
             userResponse = Console.ReadLine();
             if (userResponse == "tart cherries")
             {
@@ -650,7 +728,9 @@ namespace NorthernMIQuizlet
                 //
                 // add to file IO datset
                 //
-
+                Score7 = SCOREONE;
+                Console.WriteLine($"Very good you have recived {Score7} points to your total keep going");
+                DisplayContinuePrompt();
 
 
             }
@@ -659,12 +739,12 @@ namespace NorthernMIQuizlet
                 Console.WriteLine("Incorect");
                 Console.WriteLine();
                 Console.WriteLine("Would you like a hint [ yes or no] ");
-                Console.ReadLine();
+
                 userResponse = Console.ReadLine();
                 if (userResponse == "yes")
                 {
                     Console.WriteLine("It's very sweet and tart");
-                    Console.ReadLine();
+
                     userResponse = Console.ReadLine();
                     if (userResponse == "tart cherries")
                     {
@@ -672,7 +752,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score7 = SCOREONHINT;
+                        Console.WriteLine($"Very good you have recived {Score7} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -680,13 +762,13 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionEight();
+                       
                     }
                 }
                 else
                 {
                     Console.WriteLine("Secound try");
-                    Console.ReadLine();
+
                     userResponse = Console.ReadLine();
 
                     if (userResponse == "tart cherries")
@@ -695,7 +777,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score7 = SCOREONESECOUNDTRY;
+                        Console.WriteLine($"Very good you have recived {Score7} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -703,7 +787,7 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionEight();
+                        
 
                     }
                 }
@@ -723,7 +807,10 @@ namespace NorthernMIQuizlet
 
 
             string userResponse;
-            double Score;
+            double Score8;
+            const double SCOREONE = 1000;
+            const double SCOREONHINT = 500;
+            const double SCOREONESECOUNDTRY = 750;
 
             DisplayScreenHeader("Question Eight");
             Console.WriteLine("What is the deepest inland lake in Michigan?");
@@ -731,7 +818,7 @@ namespace NorthernMIQuizlet
             Console.WriteLine(" Lake Charleviox |   Six Mile Lake   |   Walloon Lake    |   Torch Laked |");
             Console.WriteLine();
             Console.WriteLine("PLeas enter a letter for your answer");
-            Console.ReadLine();
+
             userResponse = Console.ReadLine();
             if (userResponse == "Torch Lake")
             {
@@ -739,7 +826,9 @@ namespace NorthernMIQuizlet
                 //
                 // add to file IO datset
                 //
-
+                Score8 = SCOREONE;
+                Console.WriteLine($"Very good you have recived {Score8} points to your total keep going");
+                DisplayContinuePrompt();
 
 
             }
@@ -748,12 +837,12 @@ namespace NorthernMIQuizlet
                 Console.WriteLine("Incorect");
                 Console.WriteLine();
                 Console.WriteLine("Would you like a hint [ yes or no] ");
-                Console.ReadLine();
+
                 userResponse = Console.ReadLine();
                 if (userResponse == "yes")
                 {
                     Console.WriteLine("It is realy dark out here do you have a light");
-                    Console.ReadLine();
+
                     userResponse = Console.ReadLine();
                     if (userResponse == "Torch Lake")
                     {
@@ -761,7 +850,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score8 = SCOREONHINT;
+                        Console.WriteLine($"Very good you have recived {Score8} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -769,13 +860,13 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionNine();
+                        
                     }
                 }
                 else
                 {
                     Console.WriteLine("Secound try");
-                    Console.ReadLine();
+
                     userResponse = Console.ReadLine();
 
                     if (userResponse == "Torch Lake")
@@ -784,7 +875,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score8 = SCOREONESECOUNDTRY;
+                        Console.WriteLine($"Very good you have recived {Score8} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -792,7 +885,7 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionNine();
+                        
 
                     }
                 }
@@ -811,13 +904,16 @@ namespace NorthernMIQuizlet
             //
 
             string userResponse;
-            double Score;
+            double Score9;
+            const double SCOREONE = 1000;
+            const double SCOREONHINT = 500;
+            const double SCOREONESECOUNDTRY = 750;
 
             DisplayScreenHeader("Question Nine");
             Console.WriteLine("What makes the lakes and great lakes so clear in Michigan?");
            Console.WriteLine();
             Console.WriteLine("PLeas enter a letter for your answer");
-            Console.ReadLine();
+
             userResponse = Console.ReadLine();
             if (userResponse == "Zebra Mussels" ||  userResponse == "zebra mussels" )
             {
@@ -825,7 +921,9 @@ namespace NorthernMIQuizlet
                 //
                 // add to file IO datset
                 //
-
+                Score9 = SCOREONE;
+                Console.WriteLine($"Very good you have recived {Score9} points to your total keep going");
+                DisplayContinuePrompt();
 
 
             }
@@ -834,12 +932,12 @@ namespace NorthernMIQuizlet
                 Console.WriteLine("Incorect");
                 Console.WriteLine();
                 Console.WriteLine("Would you like a hint [ yes or no] ");
-                Console.ReadLine();
+
                 userResponse = Console.ReadLine();
                 if (userResponse == "yes")
                 {
                     Console.WriteLine("Not everything is in black and white");
-                    Console.ReadLine();
+
                     userResponse = Console.ReadLine();
                     if (userResponse == "Zebra Mussels" || userResponse == "zebra mussels")
                     {
@@ -847,7 +945,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score9 = SCOREONHINT;
+                        Console.WriteLine($"Very good you have recived {Score9} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -855,13 +955,13 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionTen();
+                        
                     }
                 }
                 else
                 {
                     Console.WriteLine("Secound try");
-                    Console.ReadLine();
+
                     userResponse = Console.ReadLine();
 
                     if (userResponse == "Zebra Mussels" || userResponse == "zebra mussels")
@@ -870,7 +970,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score9 = SCOREONESECOUNDTRY;
+                        Console.WriteLine($"Very good you have recived {Score9} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -878,7 +980,7 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayQuestionTen();
+                       
 
                     }
                 }
@@ -896,13 +998,16 @@ namespace NorthernMIQuizlet
             // 
 
             string userResponse;
-            double Score;
+            double Score10 = 0;
+            const double SCOREONE = 1000;
+            const double SCOREONHINT = 500;
+            const double SCOREONESECOUNDTRY = 750;
 
             DisplayScreenHeader("Question Ten");
             Console.WriteLine("What is the name of the festival that Charlevoix celbrates every JUly");
             Console.WriteLine();
             Console.WriteLine("PLeas enter a letter for your answer");
-            Console.ReadLine();
+
             userResponse = Console.ReadLine();
             if (userResponse == "Venetian" || userResponse == "venetian")
             {
@@ -910,7 +1015,9 @@ namespace NorthernMIQuizlet
                 //
                 // add to file IO datset
                 //
-
+                Score10 = SCOREONE;
+                Console.WriteLine($"Very good you have recived {Score10} points to your total keep going");
+                DisplayContinuePrompt();
 
 
             }
@@ -919,12 +1026,12 @@ namespace NorthernMIQuizlet
                 Console.WriteLine("Incorect");
                 Console.WriteLine();
                 Console.WriteLine("Would you like a hint [ yes or no] ");
-                Console.ReadLine();
+
                 userResponse = Console.ReadLine();
                 if (userResponse == "yes")
                 {
                     Console.WriteLine("It's nickname is the festival of water and lights");
-                    Console.ReadLine();
+
                     userResponse = Console.ReadLine();
                     if (userResponse == "Venetian" || userResponse == "venetian")
                     {
@@ -932,7 +1039,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score10 = SCOREONHINT;
+                        Console.WriteLine($"Very good you have recived {Score10} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -940,14 +1049,13 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayClosingScreen();
-                        DisplayMenuScreen();
+                       
                     }
                 }
                 else
                 {
                     Console.WriteLine("Secound try");
-                    Console.ReadLine();
+
                     userResponse = Console.ReadLine();
 
                     if (userResponse == "Venetian" || userResponse == "venetian")
@@ -956,7 +1064,9 @@ namespace NorthernMIQuizlet
                         //
                         // add to file dataset
                         //
-
+                        Score10 = SCOREONESECOUNDTRY;
+                        Console.WriteLine($"Very good you have recived {Score10} points to your total keep going");
+                        DisplayContinuePrompt();
 
                     }
                     else
@@ -964,8 +1074,7 @@ namespace NorthernMIQuizlet
                         Console.WriteLine("sorry that is incorect ");
                         Console.WriteLine();
                         DisplayContinuePrompt();
-                        DisplayClosingScreen();
-                        DisplayMenuScreen();
+                       
                         
 
                     }
@@ -978,10 +1087,53 @@ namespace NorthernMIQuizlet
         }
 
 
+      
+        
+
+     
+
+
+        
+
+        //
+        // this is going to be the score section with in the data.dataSet folder with is a I.O file
+        //
+
+        static void DisplayScores(double Score1, double Score2, double Score3, double Score4, double Score5, double Score6, double Score7, double Score8, double Score9, double Score10)
+        {
+            string userNamer;
+
+            Console.WriteLine("Please Enter your name for the leader board");
+            userNamer = Console.ReadLine();
+            Console.WriteLine($"OK we have saved {userNamer} as ur user Name");
+
+            double Total;
+
+            Total = Score1 + Score2 + Score3 + Score4 + Score5 + Score6 + Score7 + Score8 + Score9 + Score10;
+            Console.WriteLine($"So you total for this round of test is {Total}");
+
+            DisplayContinuePrompt();
 
 
 
-        #endregion
+
+        }
+        static void HighScoreList()
+        {
+            
+        }
+
+        string list<(string userNamer, double Total)>
+        static void WriteINfoData(string userNamer, double Total)
+        {
+            string dataPAth = @"data/scoresHigh.txt";
+            string HighScoreInfo;
+
+            HighScoreInfo = userNamer + "," + Total;
+
+            File.WriteAllText(dataPAth, HighScoreInfo);
+        }
+
 
         #region USER INTERFACE
 
@@ -1052,27 +1204,6 @@ namespace NorthernMIQuizlet
         }
         #endregion
 
-
-
-        #region Data scores IO
-
-        //
-        // this is going to be the score section with in the data.dataSet folder with is a I.O file
-        //
-
-        static void DisplayScores()
-        {
-
-
-
-
-
-
-
-        }
-
-
-        #endregion
 
 
 
