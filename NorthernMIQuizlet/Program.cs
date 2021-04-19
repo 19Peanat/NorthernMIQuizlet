@@ -13,7 +13,7 @@ namespace NorthernMIQuizlet
     // Title: CapStone _ NorthernMIQuizlet - S4
     // Description: This is an application like quiz let that uses most of the skills used this year each 
     // question has a dettermind score the user will have two chances to get the correct answer if not it will
-    // go to the next question. At the end the score will be totaled then show to the user.
+    // go to the next question. If you want to the CPU will ask you to write a message that can be stroed on the file io
     // Application Type: Console
     // Author: Pearl, Natham
     // Dated Created: 4/4/2021
@@ -66,7 +66,7 @@ namespace NorthernMIQuizlet
                 DisplayScreenHeader("Main Screen");
                 Console.WriteLine("\ta) Flash Quiz");
                 Console.WriteLine("\tb) Score Board");
-                Console.WriteLine("\tc) Quit");
+                Console.WriteLine("\td) Quit");
                 Console.Write("\t\tEnter Choice:");
                 menuChoice = Console.ReadLine().ToLower();
 
@@ -77,9 +77,12 @@ namespace NorthernMIQuizlet
                         break;
 
                     case "b":
-                        HighScoreList();
+                        DisplayFileIO();
                         break;
-                    case "c":
+                   
+                        
+                        
+                    case "d":
                         DisplayClosingScreen();
                         break;
 
@@ -93,7 +96,32 @@ namespace NorthernMIQuizlet
             } while (!quitApplication);
         }
 
-       
+        static void DisplayFileIO()
+        {
+            string userName;
+            string userresponse;
+            
+            Console.WriteLine("Please Enter A UserName");
+            userName = Console.ReadLine();
+            Console.WriteLine("\tYou entered the following information and it has be saved.");
+            Console.WriteLine($"\tUser name: {userName}");
+            Console.WriteLine("PLese Enter your Questions For the Writer");
+            userresponse = Console.ReadLine();
+            Console.WriteLine("\tYou entered the following information and it has be saved.");
+            Console.WriteLine($"\tUser name: {userresponse}");
+
+
+        }
+
+        static void WriteScoreInfo(string userName, string userresponse)
+        {
+string dataPath = @"Data/scoresHigh.txt";
+            string Information;
+            Information = userName + "," + userresponse;
+
+            File.AppendAllText(dataPath, Information);
+
+        }
 
         //
         // This is where the bulk of the program is going to take place more or less
@@ -101,11 +129,12 @@ namespace NorthernMIQuizlet
 
         static void DisplayFlashQuiz()
         {
+            
 
 
             DisplayQuestionOne();
 
-            DisplayQuestionTwo();
+            DisplayQuestionTwo( );
 
             DisplayQuestionThree();
 
@@ -126,7 +155,7 @@ namespace NorthernMIQuizlet
             DisplayClosingScreen();
             
 
-
+            
             
               
             
@@ -139,15 +168,15 @@ namespace NorthernMIQuizlet
         // this is where all of the question and hint static void will be so i can just will into the quiz area
         //
 
-        static void DisplayQuestionOne()
+        static double DisplayQuestionOne()
         {
             //
             // Charlevoix castell
             // Question 1 what city in northern michigan has its own castle
             //
             string userResponse;
-            double Score1;
-            
+            double Score1 =0;
+           
             const double SCOREONE = 1000;
             const double SCOREONHINT = 500;
             const double SCOREONESECOUNDTRY = 750;
@@ -165,6 +194,7 @@ namespace NorthernMIQuizlet
 
                 Score1 = SCOREONE;
                 Console.WriteLine($"Very good you have recived {Score1} points to your total keep going");
+                
                 DisplayContinuePrompt();
 
 
@@ -190,6 +220,7 @@ namespace NorthernMIQuizlet
                         //
                         Score1 = SCOREONHINT;
                         Console.WriteLine($"Very good you have recived {Score1} points to your total keep going");
+                        
                         DisplayContinuePrompt();
 
                     }
@@ -213,6 +244,7 @@ namespace NorthernMIQuizlet
                         //
                         Score1 = SCOREONESECOUNDTRY;
                         Console.WriteLine($"Very good you have recived {Score1} points to your total keep going");
+                        
                         DisplayContinuePrompt();
 
                     }
@@ -227,18 +259,20 @@ namespace NorthernMIQuizlet
                 }
 
             }
-            
+
+            return Score1;
         }
           
 
-            static  void DisplayQuestionTwo()
+            static double DisplayQuestionTwo()
         {
             //
             // Question 2
             // What island used to have its own king 
             //
             string userResponse;
-            double Score2;
+            double Score2 =0;
+            
             const double SCOREONE = 1000;
             const double SCOREONHINT = 500;
             const double SCOREONESECOUNDTRY = 750;
@@ -258,6 +292,7 @@ namespace NorthernMIQuizlet
                 //
                 Score2 = SCOREONE;
                 Console.WriteLine($"Very good you have recived {Score2} points to your total keep going");
+                
                 DisplayContinuePrompt();
 
             }
@@ -281,6 +316,7 @@ namespace NorthernMIQuizlet
                         //
                         Score2 = SCOREONHINT;
                         Console.WriteLine($"Very good you have recived {Score2} points to your total keep going");
+                        
                         DisplayContinuePrompt();
 
                     }
@@ -306,6 +342,7 @@ namespace NorthernMIQuizlet
                         //
                         Score2 = SCOREONESECOUNDTRY;
                         Console.WriteLine($"Very good you have recived {Score2} points to your total keep going");
+                        
                         DisplayContinuePrompt();
 
                     }
@@ -319,10 +356,10 @@ namespace NorthernMIQuizlet
                     }
                 }
             }
-
+            return Score2; 
         }
 
-            static void DisplayQuestionThree()
+            static double DisplayQuestionThree()
         {
             //
             // Question 3 
@@ -331,7 +368,7 @@ namespace NorthernMIQuizlet
             //
 
             string userResponse;
-            double Score3;
+            double Score3 =0;
             const double SCOREONE = 1000;
             const double SCOREONHINT = 500;
             const double SCOREONESECOUNDTRY = 750;
@@ -413,11 +450,11 @@ namespace NorthernMIQuizlet
                 }
             }
 
-
+            return Score3;
 
         }
 
-            static void DisplayQuestionFour()
+            static double DisplayQuestionFour()
         {
             //
             // Question 4 
@@ -428,7 +465,7 @@ namespace NorthernMIQuizlet
             const double SCOREONE = 1000;
             const double SCOREONHINT = 500;
             const double SCOREONESECOUNDTRY = 750;
-            double Score4;
+            double Score4 =0;
 
             DisplayScreenHeader("Question Four");
             Console.WriteLine();
@@ -508,10 +545,10 @@ namespace NorthernMIQuizlet
             }
 
 
-
+            return Score4;
         }
 
-             static void DisplayQuestionFive()
+             static double DisplayQuestionFive()
         {
             //
             // Questin 5 
@@ -520,7 +557,7 @@ namespace NorthernMIQuizlet
             //
 
             string userResponse;
-            double Score5;
+            double Score5 =0;
             const double SCOREONE = 1000;
             const double SCOREONHINT = 500;
             const double SCOREONESECOUNDTRY = 750;
@@ -600,12 +637,12 @@ namespace NorthernMIQuizlet
                     }
                 }
             }
-
-
+            
+            return Score5;
 
         }
 
-       static void DisplayQuestionSix()
+       static double DisplayQuestionSix()
         {
             //
             // Question 6
@@ -614,7 +651,7 @@ namespace NorthernMIQuizlet
             //
 
             string userResponse;
-            double Score6;
+            double Score6 =0;
             const double SCOREONE = 1000;
             const double SCOREONHINT = 500;
             const double SCOREONESECOUNDTRY = 750;
@@ -698,11 +735,11 @@ namespace NorthernMIQuizlet
                 }
             }
 
-
+            return Score6;
 
         }
 
-        static void DisplayQuestionSeven()
+        static double DisplayQuestionSeven()
         {
             //
             // Question 7
@@ -711,7 +748,7 @@ namespace NorthernMIQuizlet
             //
 
             string userResponse;
-            double Score7;
+            double Score7 =0;
             const double SCOREONE = 1000;
             const double SCOREONHINT = 500;
             const double SCOREONESECOUNDTRY = 750;
@@ -793,11 +830,11 @@ namespace NorthernMIQuizlet
                 }
             }
 
-
+            return Score7;
 
         }
 
-        static void DisplayQuestionEight()
+        static double DisplayQuestionEight()
         {
             //
             // Question 8
@@ -807,7 +844,7 @@ namespace NorthernMIQuizlet
 
 
             string userResponse;
-            double Score8;
+            double Score8 =0;
             const double SCOREONE = 1000;
             const double SCOREONHINT = 500;
             const double SCOREONESECOUNDTRY = 750;
@@ -891,11 +928,11 @@ namespace NorthernMIQuizlet
                 }
             }
 
-
+            return Score8;
 
         }
 
-        static void DisplayQuestionNine()
+        static double DisplayQuestionNine()
         {
             //
             // Question 9
@@ -904,7 +941,7 @@ namespace NorthernMIQuizlet
             //
 
             string userResponse;
-            double Score9;
+            double Score9 =0;
             const double SCOREONE = 1000;
             const double SCOREONHINT = 500;
             const double SCOREONESECOUNDTRY = 750;
@@ -987,18 +1024,25 @@ namespace NorthernMIQuizlet
             }
 
 
-
+            return Score9;
 
         }
 
-        static void DisplayQuestionTen()
+
+
+       
+
+
+
+
+        static double DisplayQuestionTen()
         {
             //
             // Question 10 
             // 
 
             string userResponse;
-            double Score10 = 0;
+            double Score10 =0;
             const double SCOREONE = 1000;
             const double SCOREONHINT = 500;
             const double SCOREONESECOUNDTRY = 750;
@@ -1066,6 +1110,7 @@ namespace NorthernMIQuizlet
                         //
                         Score10 = SCOREONESECOUNDTRY;
                         Console.WriteLine($"Very good you have recived {Score10} points to your total keep going");
+
                         DisplayContinuePrompt();
 
                     }
@@ -1081,59 +1126,17 @@ namespace NorthernMIQuizlet
                 }
             }
 
-
-
-
-        }
-
-
-      
-        
-
-     
-
-
-        
-
-        //
-        // this is going to be the score section with in the data.dataSet folder with is a I.O file
-        //
-
-        static void DisplayScores(double Score1, double Score2, double Score3, double Score4, double Score5, double Score6, double Score7, double Score8, double Score9, double Score10)
-        {
-            string userNamer;
-
-            Console.WriteLine("Please Enter your name for the leader board");
-            userNamer = Console.ReadLine();
-            Console.WriteLine($"OK we have saved {userNamer} as ur user Name");
-
-            double Total;
-
-            Total = Score1 + Score2 + Score3 + Score4 + Score5 + Score6 + Score7 + Score8 + Score9 + Score10;
-            Console.WriteLine($"So you total for this round of test is {Total}");
-
-            DisplayContinuePrompt();
-
-
-
-
-        }
-        static void HighScoreList()
-        {
+            return Score10;
             
         }
 
-        string list<(string userNamer, double Total)>
-        static void WriteINfoData(string userNamer, double Total)
-        {
-            string dataPAth = @"data/scoresHigh.txt";
-            string HighScoreInfo;
 
-            HighScoreInfo = userNamer + "," + Total;
 
-            File.WriteAllText(dataPAth, HighScoreInfo);
-        }
 
+
+
+
+      
 
         #region USER INTERFACE
 
